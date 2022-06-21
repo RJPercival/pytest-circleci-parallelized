@@ -3,10 +3,10 @@ version: 2.1
 jobs:
   unit-test:
     docker:
-      - image: circleci/python:3.7
+      - image: cimg/python:3.9
     steps:
       - checkout
-      - run: sudo pip install tox
+      - run: pip install tox
       - run: tox
       - store_artifacts:
           path: /tmp/test-reports
@@ -17,10 +17,10 @@ jobs:
   integration-test:
     parallelism: 2
     docker:
-      - image: circleci/python:3.7
+      - image: cimg/python:3.9
     steps:
       - checkout
-      - run: sudo pip install tox
+      - run: pip install tox
       - run: tox -e integration
       - store_artifacts:
           path: /tmp/integration-test-reports
@@ -29,10 +29,10 @@ jobs:
           path: /tmp/integration-test-reports
   deploy:
     docker:
-      - image: circleci/python:3.7
+      - image: cimg/python:3.9
     steps:
       - checkout
-      - run: sudo pip install twine
+      - run: pip install twine
       - run: python setup.py sdist
       - run: twine upload --skip-existing dist/*
 

@@ -12,11 +12,13 @@ def read(file_name: str) -> str:
 
 setuptools.setup(
     name="pytest-circleci-parallelized-rjp",
-    version="0.0.4",
+    version="0.1.0",
     author="Ryan Wilson-Perkin",
     author_email="ryanwilsonperkin@gmail.com",
+    maintainer="Rob Percival",
+    maintainer_email="rob.percival87@gmail.com",
     license="MIT",
-    url="https://github.com/ryanwilsonperkin/pytest-circleci-parallelized",
+    url="https://github.com/RJPercival/pytest-circleci-parallelized",
     description="Parallelize pytest across CircleCI workers.",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",

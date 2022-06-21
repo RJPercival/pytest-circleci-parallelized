@@ -1,9 +1,10 @@
 import collections
 import subprocess
-from typing import DefaultDict, Iterable, List, Optional, Sequence, Union
+from typing import DefaultDict, Generator, Iterable, List, Optional, Sequence, Union
 
 import pytest
 from py.path import local as LocalPath
+from pluggy import _result as pluggy_result  # type: ignore
 
 
 def pytest_addoption(parser: pytest.Parser) -> None:
@@ -77,6 +78,22 @@ def filter_tests_with_circleci(test_list: Iterable) -> List:
     return [
         line.strip() for line in circleci_output.decode("utf-8").strip().split("\n")
     ]
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_cmdline_main(
+    config: pytest.Config,
+) -> Generator[pytest.Config, pluggy_result._Result, None]:
+    outcome = yield config
+    exit_code = outcome.get_result()
+
+    if (
+        circleci_parallelized_enabled(config)
+        and exit_code == pytest.ExitCode.NO_TESTS_COLLECTED
+    ):
+        # It is possible that filtering of tests resulted in this worker having nothing
+        # to do - that is fine.
+        outcome.force_result(pytest.ExitCode.OK)
 
 
 def pytest_collection_modifyitems(

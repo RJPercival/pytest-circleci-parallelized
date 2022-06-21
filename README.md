@@ -1,6 +1,6 @@
 # pytest-circleci-parallelized
 
-[![PyPI version](https://img.shields.io/pypi/v/pytest-circleci-parallelized.svg)](https://pypi.org/project/pytest-circleci-parallelized) [![Python versions](https://img.shields.io/pypi/pyversions/pytest-circleci-parallelized.svg)](https://pypi.org/project/pytest-circleci-parallelized) [![CircleCI build status](https://circleci.com/gh/ryanwilsonperkin/pytest-circleci-parallelized.svg?style=svg)](https://circleci.com/gh/ryanwilsonperkin/pytest-circleci-parallelized)
+[![PyPI version](https://img.shields.io/pypi/v/pytest-circleci-parallelized-rjp.svg)](https://pypi.org/project/pytest-circleci-parallelized-rjp) [![Python versions](https://img.shields.io/pypi/pyversions/pytest-circleci-parallelized-rjp.svg)](https://pypi.org/project/pytest-circleci-parallelized-rjp) [![CircleCI build status](https://circleci.com/gh/RJPercival/pytest-circleci-parallelized.svg?style=svg)](https://circleci.com/gh/RJPercival/pytest-circleci-parallelized)
 
 Parallelize pytest across CircleCI workers.
 
@@ -32,10 +32,10 @@ workflows:
 
 ## Installation
 
-You can install "pytest-circleci-parallelized" via pip from [PyPI][pypi].
+You can install "pytest-circleci-parallelized-rjp" via pip from [PyPI][pypi].
 
 ```sh
-pip install pytest-circleci-parallelized
+pip install pytest-circleci-parallelized-rjp
 ```
 
 ## Contributing
@@ -51,6 +51,6 @@ Distributed under the terms of the [MIT](/LICENSE) license, `pytest-circleci-par
 If you encounter any problems, please [file an issue](new-issue) along with a detailed description.
 
 [tox]: https://tox.readthedocs.io/en/latest/
-[pypi]: https://pypi.org/project/pytest-circleci-parallelized/
-[new-issue]: https://github.com/ryanwilsonperkin/pytest-circleci-parallelized/issues/new
+[pypi]: https://pypi.org/project/pytest-circleci-parallelized-rjp/
+[new-issue]: https://github.com/RJPercival/pytest-circleci-parallelized/issues/new
 [circleci-test-splitting]: https://circleci.com/docs/2.0/parallelism-faster-jobs/

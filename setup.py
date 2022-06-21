@@ -11,7 +11,7 @@ def read(file_name: str) -> str:
 
 
 setuptools.setup(
-    name="pytest-circleci-parallelized",
+    name="pytest-circleci-parallelized-rjp",
     version="0.0.4",
     author="Ryan Wilson-Perkin",
     author_email="ryanwilsonperkin@gmail.com",

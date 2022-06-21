@@ -19,6 +19,7 @@ setuptools.setup(
     url="https://github.com/ryanwilsonperkin/pytest-circleci-parallelized",
     description="Parallelize pytest across CircleCI workers.",
     long_description=read("README.md"),
+    long_description_content_type="text/markdown",
     py_modules=["pytest_circleci_parallelized"],
     python_requires=">=3.7",
     install_requires=["pytest"],
